@@ -1,14 +1,13 @@
-# Babel Webpack Starter
+# Microposts
 
-A starter pack to build JavaScript applications using standards from ES2015, ES2016 & ES2017. It uses webpack, Babel and webpack-dev-server to compile and serve. It is fully compatible with Async/Await as it uses the Babel polyfill.
+A front-end CRUD application that allows performing CRUD operation through json-server simulating an API.
 
 ### Version
-1.1.0
+1.0.0
 
 ## Usage
 
 ### Installation
-
 Install the dependencies
 
 ```sh
@@ -29,12 +28,19 @@ Compile and build
 $ npm run build
 ```
 
+### API
+Launch json-server
+
+```sh
+$ npm run json:server
+```sh
+
 ## More Info
 
 ### Author
 
-Brad Traversy
-[Traversy Media](http://www.traversymedia.com)
+Mihai Filip
+[voidthevillain](https://github.com/voidthevillain)
 
 ### License
 

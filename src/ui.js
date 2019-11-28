@@ -1,4 +1,4 @@
-import { timingSafeEqual } from "crypto"
+import { timingSafeEqual } from 'crypto'
 
 class UI {
   constructor() {
@@ -19,10 +19,10 @@ class UI {
           <div class="card-body">
             <h4 class="card-title">${post.title}</h4>
             <p class="card-text">${post.body}</p>
-            <a href="#" class="edit card-link text-secondary" data-id="${post.id}">
+            <a href="#" class="edit card-link text-primary" data-id="${post.id}">
               <i class="fa fa-pencil"></i>
             </a>
-            <a href="#" class="delete card-link text-danger" data-id="${post.id}">
+            <a href="#" class="delete card-link text-primary" data-id="${post.id}">
               <i class="fa fa-remove"></i>
             </a>
           </div>
@@ -61,6 +61,53 @@ class UI {
   clearFields() {
     this.titleInput.value = ''
     this.bodyInput.value = ''
+  }
+
+  fillForm(data) {
+    const { id, title, body } = data
+    this.titleInput.value = title
+    this.bodyInput.value = body
+    this.idInput.value = id
+
+    this.changeFormState('edit')
+  }
+
+  clearIdInput() {
+    this.idInput.value = ''
+  }
+
+  changeFormState(type) {
+    switch (type) {
+      case 'edit':
+        this.postSubmit.textContent = 'Update Post'
+        this.postSubmit.className = 'post-submit btn btn-primary btn-block'
+
+        // Cancel button
+        const button = document.createElement('button')
+        button.className = 'post-cancel btn btn-light btn-block'
+        button.appendChild(document.createTextNode('Cancel'))
+
+        // Get parent and end
+        const cardForm = document.querySelector('.card-form')
+        const formEnd = document.querySelector('.form-end')
+        cardForm.insertBefore(button, formEnd)
+        break
+      case 'add':
+        this.postSubmit.textContent = 'Post It'
+        this.postSubmit.className = 'post-submit btn btn-success btn-block'
+
+        // check if cancel button and remove
+        if (document.querySelector('.post-cancel')) {
+          document.querySelector('.post-cancel').remove()
+        }
+
+        // Clear id from hidden
+        this.clearIdInput()
+
+        // Clear fields
+        this.clearFields()
+        break
+    }
   }
 }
 

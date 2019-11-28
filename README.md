@@ -33,7 +33,7 @@ Launch json-server
 
 ```sh
 $ npm run json:server
-```sh
+```
 
 ## More Info
 

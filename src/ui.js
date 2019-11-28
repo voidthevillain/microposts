@@ -37,7 +37,7 @@ class UI {
     this.clearAlert()
 
     const div = document.createElement('div')
-    div.className = className
+    div.className = className + ' text-center mt-3'
     div.innerHTML = `<strong>${message}</strong>`
 
     const container = document.querySelector('.posts-container')

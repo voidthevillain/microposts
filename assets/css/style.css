@@ -1,4 +1,8 @@
-.delete {
+body {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+
+/* .delete {
   color: rgb(255, 0, 0);
 }
 
@@ -12,4 +16,4 @@
 
 .edit:hover {
   color: rgb(63, 63, 63);
-}
+} */
